@@ -7,22 +7,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import android.app.Activity;
 import android.content.Intent;
-public class Calendar extends CordovaPlugin {
-     public static final String ACTION_ADD_CALENDAR_ENTRY = "addCalendarEntry"; 
+import android.widget.Toast;
+public class TestToast extends CordovaPlugin {
+	public static final String SHOW_TOAST = "showToast"; 
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
-				if (ACTION_ADD_CALENDAR_ENTRY.equals(action)) { 
+				if (SHOW_TOAST.equals(action)) { 
 						 JSONObject arg_object = args.getJSONObject(0);
 						 Intent calIntent = new Intent(Intent.ACTION_EDIT)
 					.setType("vnd.android.cursor.item/event")
-					.putExtra("beginTime", arg_object.getLong("startTimeMillis"))
-					.putExtra("endTime", arg_object.getLong("endTimeMillis"))
-					.putExtra("title", arg_object.getString("title"))
-					.putExtra("description", arg_object.getString("description"))
-					.putExtra("eventLocation", arg_object.getString("eventLocation"));
-			 
+					.putExtra("Msg", arg_object.getString("Msg"));
+					Toast.makeText(getApplication(), "msg", 1).show();
 				   this.cordova.getActivity().startActivity(calIntent);
 				   callbackContext.success();
 				   return true;
