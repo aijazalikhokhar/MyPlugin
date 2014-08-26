@@ -10,13 +10,13 @@
  
  
     <js-module src="www/Toast.js" name="Toast">
-        <clobbers target="Device" />
+        <clobbers target="Toast" />
     </js-module>
  
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Device">
+            <feature name="Toast">
                 <param name="android-package" value="com.mexyon.net.TestToast"/>
             </feature>
         </config-file>
