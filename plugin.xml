@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
  
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-           id="org.devgirl.calendar"
+           id="com.mexyon.net"
       version="0.1.0">
     <name>Calendar</name>
     <description>Sample PhoneGap Calendar Plugin</description>
@@ -17,10 +17,10 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Calendar">
-                <param name="android-package" value="org.devgirl.calendar.Calendar"/>
+                <param name="android-package" value="com.mexyon.net.TestToast"/>
             </feature>
         </config-file>
  
-        <source-file src="src/android/Calendar.java" target-dir="src/org/devgirl/calendar" />      
+        <source-file src="src/android/TestToast.java" target-dir="src/com/mexyon/net" />      
      </platform>          
 </plugin>
